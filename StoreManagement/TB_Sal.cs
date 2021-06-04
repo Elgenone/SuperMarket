@@ -12,19 +12,14 @@ namespace StoreManagement
     using System;
     using System.Collections.Generic;
     
-    public partial class TB_Cat
+    public partial class TB_Sal
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public TB_Cat()
-        {
-            this.TB_Pur = new HashSet<TB_Pur>();
-        }
-    
         public int ID { get; set; }
-        public string Cat_Name { get; set; }
-        public byte[] Cat_Image { get; set; }
-    
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<TB_Pur> TB_Pur { get; set; }
+        public string Sal_Name { get; set; }
+        public string Sal_Cus { get; set; }
+        public Nullable<double> Sal_Sell { get; set; }
+        public Nullable<double> Sal_Qt { get; set; }
+        public Nullable<double> Sal_TSell { get; set; }
+        public Nullable<System.DateTime> Sal_Date { get; set; }
     }
 }

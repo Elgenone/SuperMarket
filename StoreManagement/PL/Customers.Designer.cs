@@ -1,7 +1,7 @@
 ﻿
 namespace StoreManagement.PL
 {
-    partial class Purchases
+    partial class Customers
     {
         /// <summary>
         /// Required designer variable.
@@ -29,21 +29,19 @@ namespace StoreManagement.PL
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Purchases));
-            this.pn_Pur = new System.Windows.Forms.Panel();
+            DevExpress.XtraEditors.TableLayout.TableColumnDefinition tableColumnDefinition1 = new DevExpress.XtraEditors.TableLayout.TableColumnDefinition();
+            DevExpress.XtraEditors.TableLayout.TableRowDefinition tableRowDefinition1 = new DevExpress.XtraEditors.TableLayout.TableRowDefinition();
+            DevExpress.XtraEditors.TableLayout.TableRowDefinition tableRowDefinition2 = new DevExpress.XtraEditors.TableLayout.TableRowDefinition();
+            DevExpress.XtraEditors.TableLayout.TableRowDefinition tableRowDefinition3 = new DevExpress.XtraEditors.TableLayout.TableRowDefinition();
+            DevExpress.XtraEditors.TableLayout.TableRowDefinition tableRowDefinition4 = new DevExpress.XtraEditors.TableLayout.TableRowDefinition();
+            DevExpress.XtraGrid.Views.Tile.TileViewItemElement tileViewItemElement1 = new DevExpress.XtraGrid.Views.Tile.TileViewItemElement();
+            DevExpress.XtraGrid.Views.Tile.TileViewItemElement tileViewItemElement2 = new DevExpress.XtraGrid.Views.Tile.TileViewItemElement();
+            DevExpress.XtraGrid.Views.Tile.TileViewItemElement tileViewItemElement3 = new DevExpress.XtraGrid.Views.Tile.TileViewItemElement();
+            DevExpress.XtraGrid.Views.Tile.TileViewItemElement tileViewItemElement4 = new DevExpress.XtraGrid.Views.Tile.TileViewItemElement();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Customers));
+            this.pn_Cus = new System.Windows.Forms.Panel();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
-            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.colPur_Name = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colPur_Type = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colPur_Cat = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colPur_Supp = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colPur_Det = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colPur_Buy = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colPur_Sell = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colPur_Qu = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colPur_TBuy = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colPur_TSell = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colPur_TProf = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.tileView1 = new DevExpress.XtraGrid.Views.Tile.TileView();
             this.panel1 = new System.Windows.Forms.Panel();
             this.txt_search = new System.Windows.Forms.TextBox();
             this.bt_search = new DevExpress.XtraEditors.SimpleButton();
@@ -51,153 +49,87 @@ namespace StoreManagement.PL
             this.bt_delete = new DevExpress.XtraEditors.SimpleButton();
             this.bt_Edite = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
-            this.pn_Pur.SuspendLayout();
+            this.colID = new DevExpress.XtraGrid.Columns.TileViewColumn();
+            this.colCus_Name = new DevExpress.XtraGrid.Columns.TileViewColumn();
+            this.colCus_Phone = new DevExpress.XtraGrid.Columns.TileViewColumn();
+            this.colCus_Email = new DevExpress.XtraGrid.Columns.TileViewColumn();
+            this.colCus_Image = new DevExpress.XtraGrid.Columns.TileViewColumn();
+            this.pn_Cus.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tileView1)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // pn_Pur
+            // pn_Cus
             // 
-            this.pn_Pur.Controls.Add(this.gridControl1);
-            this.pn_Pur.Controls.Add(this.panel1);
-            this.pn_Pur.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pn_Pur.Location = new System.Drawing.Point(0, 0);
-            this.pn_Pur.Name = "pn_Pur";
-            this.pn_Pur.Size = new System.Drawing.Size(694, 502);
-            this.pn_Pur.TabIndex = 0;
+            this.pn_Cus.Controls.Add(this.gridControl1);
+            this.pn_Cus.Controls.Add(this.panel1);
+            this.pn_Cus.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pn_Cus.Location = new System.Drawing.Point(0, 0);
+            this.pn_Cus.Name = "pn_Cus";
+            this.pn_Cus.Size = new System.Drawing.Size(694, 502);
+            this.pn_Cus.TabIndex = 0;
             // 
             // gridControl1
             // 
-            this.gridControl1.DataSource = typeof(StoreManagement.TB_Pur);
+            this.gridControl1.DataSource = typeof(StoreManagement.TB_Cus);
             this.gridControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gridControl1.Location = new System.Drawing.Point(0, 0);
-            this.gridControl1.MainView = this.gridView1;
+            this.gridControl1.MainView = this.tileView1;
             this.gridControl1.Name = "gridControl1";
             this.gridControl1.Size = new System.Drawing.Size(694, 431);
             this.gridControl1.TabIndex = 3;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridView1});
+            this.tileView1});
             // 
-            // gridView1
+            // tileView1
             // 
-            this.gridView1.Appearance.GroupPanel.Font = new System.Drawing.Font("Arabic Typesetting", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gridView1.Appearance.GroupPanel.Options.UseFont = true;
-            this.gridView1.Appearance.GroupPanel.Options.UseTextOptions = true;
-            this.gridView1.Appearance.GroupPanel.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridView1.Appearance.GroupPanel.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.gridView1.Appearance.HeaderPanel.Font = new System.Drawing.Font("Arabic Typesetting", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gridView1.Appearance.HeaderPanel.Options.UseFont = true;
-            this.gridView1.Appearance.HeaderPanel.Options.UseTextOptions = true;
-            this.gridView1.Appearance.HeaderPanel.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridView1.Appearance.HeaderPanel.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.gridView1.Appearance.Row.Font = new System.Drawing.Font("Arabic Typesetting", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gridView1.Appearance.Row.Options.UseFont = true;
-            this.gridView1.Appearance.Row.Options.UseTextOptions = true;
-            this.gridView1.Appearance.Row.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridView1.Appearance.Row.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.colPur_Name,
-            this.colPur_Type,
-            this.colPur_Cat,
-            this.colPur_Supp,
-            this.colPur_Det,
-            this.colPur_Buy,
-            this.colPur_Sell,
-            this.colPur_Qu,
-            this.colPur_TBuy,
-            this.colPur_TSell,
-            this.colPur_TProf});
-            this.gridView1.GridControl = this.gridControl1;
-            this.gridView1.Name = "gridView1";
-            // 
-            // colPur_Name
-            // 
-            this.colPur_Name.Caption = "اسم الماده";
-            this.colPur_Name.FieldName = "Pur_Name";
-            this.colPur_Name.Name = "colPur_Name";
-            this.colPur_Name.Visible = true;
-            this.colPur_Name.VisibleIndex = 0;
-            // 
-            // colPur_Type
-            // 
-            this.colPur_Type.Caption = "النوع";
-            this.colPur_Type.FieldName = "Pur_Type";
-            this.colPur_Type.Name = "colPur_Type";
-            this.colPur_Type.Visible = true;
-            this.colPur_Type.VisibleIndex = 1;
-            // 
-            // colPur_Cat
-            // 
-            this.colPur_Cat.Caption = "الصنف";
-            this.colPur_Cat.FieldName = "Pur_Cat";
-            this.colPur_Cat.Name = "colPur_Cat";
-            this.colPur_Cat.Visible = true;
-            this.colPur_Cat.VisibleIndex = 2;
-            // 
-            // colPur_Supp
-            // 
-            this.colPur_Supp.Caption = "المورد";
-            this.colPur_Supp.FieldName = "Pur_Supp";
-            this.colPur_Supp.Name = "colPur_Supp";
-            this.colPur_Supp.Visible = true;
-            this.colPur_Supp.VisibleIndex = 3;
-            // 
-            // colPur_Det
-            // 
-            this.colPur_Det.Caption = "التفاصيل";
-            this.colPur_Det.FieldName = "Pur_Det";
-            this.colPur_Det.Name = "colPur_Det";
-            this.colPur_Det.Visible = true;
-            this.colPur_Det.VisibleIndex = 4;
-            // 
-            // colPur_Buy
-            // 
-            this.colPur_Buy.Caption = "سعر الشراء";
-            this.colPur_Buy.FieldName = "Pur_Buy";
-            this.colPur_Buy.Name = "colPur_Buy";
-            this.colPur_Buy.Visible = true;
-            this.colPur_Buy.VisibleIndex = 5;
-            // 
-            // colPur_Sell
-            // 
-            this.colPur_Sell.Caption = "سعر البيع";
-            this.colPur_Sell.FieldName = "Pur_Sell";
-            this.colPur_Sell.Name = "colPur_Sell";
-            this.colPur_Sell.Visible = true;
-            this.colPur_Sell.VisibleIndex = 6;
-            // 
-            // colPur_Qu
-            // 
-            this.colPur_Qu.Caption = "الكميه";
-            this.colPur_Qu.FieldName = "Pur_Qu";
-            this.colPur_Qu.Name = "colPur_Qu";
-            this.colPur_Qu.Visible = true;
-            this.colPur_Qu.VisibleIndex = 7;
-            // 
-            // colPur_TBuy
-            // 
-            this.colPur_TBuy.Caption = "سعر البيع الكلى";
-            this.colPur_TBuy.FieldName = "Pur_TBuy";
-            this.colPur_TBuy.Name = "colPur_TBuy";
-            this.colPur_TBuy.Visible = true;
-            this.colPur_TBuy.VisibleIndex = 8;
-            // 
-            // colPur_TSell
-            // 
-            this.colPur_TSell.Caption = "سعر الشراء الكلى";
-            this.colPur_TSell.FieldName = "Pur_TSell";
-            this.colPur_TSell.Name = "colPur_TSell";
-            this.colPur_TSell.Visible = true;
-            this.colPur_TSell.VisibleIndex = 9;
-            // 
-            // colPur_TProf
-            // 
-            this.colPur_TProf.Caption = "الارباح";
-            this.colPur_TProf.FieldName = "Pur_TProf";
-            this.colPur_TProf.Name = "colPur_TProf";
-            this.colPur_TProf.Visible = true;
-            this.colPur_TProf.VisibleIndex = 10;
+            this.tileView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colID,
+            this.colCus_Name,
+            this.colCus_Phone,
+            this.colCus_Email,
+            this.colCus_Image});
+            this.tileView1.GridControl = this.gridControl1;
+            this.tileView1.Name = "tileView1";
+            this.tileView1.OptionsTiles.ItemSize = new System.Drawing.Size(258, 304);
+            this.tileView1.OptionsTiles.RowCount = 0;
+            this.tileView1.TileColumns.Add(tableColumnDefinition1);
+            tableRowDefinition1.Length.Value = 48D;
+            tableRowDefinition2.Length.Value = 46D;
+            tableRowDefinition3.Length.Value = 48D;
+            tableRowDefinition4.Length.Value = 146D;
+            this.tileView1.TileRows.Add(tableRowDefinition1);
+            this.tileView1.TileRows.Add(tableRowDefinition2);
+            this.tileView1.TileRows.Add(tableRowDefinition3);
+            this.tileView1.TileRows.Add(tableRowDefinition4);
+            tileViewItemElement1.Column = this.colCus_Name;
+            tileViewItemElement1.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            tileViewItemElement1.ImageOptions.ImageScaleMode = DevExpress.XtraEditors.TileItemImageScaleMode.Squeeze;
+            tileViewItemElement1.Text = "colCus_Name";
+            tileViewItemElement1.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            tileViewItemElement2.Column = this.colCus_Phone;
+            tileViewItemElement2.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            tileViewItemElement2.ImageOptions.ImageScaleMode = DevExpress.XtraEditors.TileItemImageScaleMode.Squeeze;
+            tileViewItemElement2.RowIndex = 1;
+            tileViewItemElement2.Text = "colCus_Phone";
+            tileViewItemElement2.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            tileViewItemElement3.Column = this.colCus_Email;
+            tileViewItemElement3.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            tileViewItemElement3.ImageOptions.ImageScaleMode = DevExpress.XtraEditors.TileItemImageScaleMode.Squeeze;
+            tileViewItemElement3.RowIndex = 2;
+            tileViewItemElement3.Text = "colCus_Email";
+            tileViewItemElement3.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            tileViewItemElement4.Column = this.colCus_Image;
+            tileViewItemElement4.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            tileViewItemElement4.ImageOptions.ImageScaleMode = DevExpress.XtraEditors.TileItemImageScaleMode.Squeeze;
+            tileViewItemElement4.RowIndex = 3;
+            tileViewItemElement4.Text = "colCus_Image";
+            tileViewItemElement4.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            this.tileView1.TileTemplate.Add(tileViewItemElement1);
+            this.tileView1.TileTemplate.Add(tileViewItemElement2);
+            this.tileView1.TileTemplate.Add(tileViewItemElement3);
+            this.tileView1.TileTemplate.Add(tileViewItemElement4);
             // 
             // panel1
             // 
@@ -290,22 +222,56 @@ namespace StoreManagement.PL
             this.simpleButton1.Text = "اضافه";
             this.simpleButton1.Click += new System.EventHandler(this.bt_Add);
             // 
-            // Purchases
+            // colID
+            // 
+            this.colID.FieldName = "ID";
+            this.colID.Name = "colID";
+            this.colID.Visible = true;
+            this.colID.VisibleIndex = 0;
+            // 
+            // colCus_Name
+            // 
+            this.colCus_Name.FieldName = "Cus_Name";
+            this.colCus_Name.Name = "colCus_Name";
+            this.colCus_Name.Visible = true;
+            this.colCus_Name.VisibleIndex = 1;
+            // 
+            // colCus_Phone
+            // 
+            this.colCus_Phone.FieldName = "Cus_Phone";
+            this.colCus_Phone.Name = "colCus_Phone";
+            this.colCus_Phone.Visible = true;
+            this.colCus_Phone.VisibleIndex = 2;
+            // 
+            // colCus_Email
+            // 
+            this.colCus_Email.FieldName = "Cus_Email";
+            this.colCus_Email.Name = "colCus_Email";
+            this.colCus_Email.Visible = true;
+            this.colCus_Email.VisibleIndex = 3;
+            // 
+            // colCus_Image
+            // 
+            this.colCus_Image.FieldName = "Cus_Image";
+            this.colCus_Image.Name = "colCus_Image";
+            this.colCus_Image.Visible = true;
+            this.colCus_Image.VisibleIndex = 4;
+            // 
+            // Customers
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(694, 502);
-            this.Controls.Add(this.pn_Pur);
+            this.Controls.Add(this.pn_Cus);
             this.Font = new System.Drawing.Font("Arabic Typesetting", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
-            this.Name = "Purchases";
+            this.Name = "Customers";
             this.Text = "Catagories";
-            this.Activated += new System.EventHandler(this.Purchases_Activated);
-            this.pn_Pur.ResumeLayout(false);
+            this.pn_Cus.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tileView1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
@@ -314,7 +280,7 @@ namespace StoreManagement.PL
 
         #endregion
 
-        public System.Windows.Forms.Panel pn_Pur;
+        public System.Windows.Forms.Panel pn_Cus;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.TextBox txt_search;
         private DevExpress.XtraEditors.SimpleButton bt_search;
@@ -322,18 +288,12 @@ namespace StoreManagement.PL
         private DevExpress.XtraEditors.SimpleButton bt_delete;
         private DevExpress.XtraEditors.SimpleButton bt_Edite;
         private DevExpress.XtraEditors.SimpleButton simpleButton1;
+        private DevExpress.XtraGrid.Views.Tile.TileView tileView1;
         public DevExpress.XtraGrid.GridControl gridControl1;
-        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
-        private DevExpress.XtraGrid.Columns.GridColumn colPur_Name;
-        private DevExpress.XtraGrid.Columns.GridColumn colPur_Type;
-        private DevExpress.XtraGrid.Columns.GridColumn colPur_Cat;
-        private DevExpress.XtraGrid.Columns.GridColumn colPur_Supp;
-        private DevExpress.XtraGrid.Columns.GridColumn colPur_Det;
-        private DevExpress.XtraGrid.Columns.GridColumn colPur_Buy;
-        private DevExpress.XtraGrid.Columns.GridColumn colPur_Sell;
-        private DevExpress.XtraGrid.Columns.GridColumn colPur_Qu;
-        private DevExpress.XtraGrid.Columns.GridColumn colPur_TBuy;
-        private DevExpress.XtraGrid.Columns.GridColumn colPur_TSell;
-        private DevExpress.XtraGrid.Columns.GridColumn colPur_TProf;
+        private DevExpress.XtraGrid.Columns.TileViewColumn colID;
+        private DevExpress.XtraGrid.Columns.TileViewColumn colCus_Name;
+        private DevExpress.XtraGrid.Columns.TileViewColumn colCus_Phone;
+        private DevExpress.XtraGrid.Columns.TileViewColumn colCus_Email;
+        private DevExpress.XtraGrid.Columns.TileViewColumn colCus_Image;
     }
 }

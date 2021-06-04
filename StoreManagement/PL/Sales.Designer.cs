@@ -1,7 +1,7 @@
 ﻿
 namespace StoreManagement.PL
 {
-    partial class Purchases
+    partial class Sales
     {
         /// <summary>
         /// Required designer variable.
@@ -29,21 +29,16 @@ namespace StoreManagement.PL
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Purchases));
-            this.pn_Pur = new System.Windows.Forms.Panel();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Sales));
+            this.pn_Sell = new System.Windows.Forms.Panel();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.colPur_Name = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colPur_Type = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colPur_Cat = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colPur_Supp = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colPur_Det = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colPur_Buy = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colPur_Sell = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colPur_Qu = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colPur_TBuy = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colPur_TSell = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colPur_TProf = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colSal_Name = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colSal_Cus = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colSal_Sell = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colSal_Qt = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colSal_TSell = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colSal_Date = new DevExpress.XtraGrid.Columns.GridColumn();
             this.panel1 = new System.Windows.Forms.Panel();
             this.txt_search = new System.Windows.Forms.TextBox();
             this.bt_search = new DevExpress.XtraEditors.SimpleButton();
@@ -51,25 +46,25 @@ namespace StoreManagement.PL
             this.bt_delete = new DevExpress.XtraEditors.SimpleButton();
             this.bt_Edite = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
-            this.pn_Pur.SuspendLayout();
+            this.pn_Sell.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // pn_Pur
+            // pn_Sell
             // 
-            this.pn_Pur.Controls.Add(this.gridControl1);
-            this.pn_Pur.Controls.Add(this.panel1);
-            this.pn_Pur.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pn_Pur.Location = new System.Drawing.Point(0, 0);
-            this.pn_Pur.Name = "pn_Pur";
-            this.pn_Pur.Size = new System.Drawing.Size(694, 502);
-            this.pn_Pur.TabIndex = 0;
+            this.pn_Sell.Controls.Add(this.gridControl1);
+            this.pn_Sell.Controls.Add(this.panel1);
+            this.pn_Sell.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pn_Sell.Location = new System.Drawing.Point(0, 0);
+            this.pn_Sell.Name = "pn_Sell";
+            this.pn_Sell.Size = new System.Drawing.Size(694, 502);
+            this.pn_Sell.TabIndex = 0;
             // 
             // gridControl1
             // 
-            this.gridControl1.DataSource = typeof(StoreManagement.TB_Pur);
+            this.gridControl1.DataSource = typeof(StoreManagement.TB_Sal);
             this.gridControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gridControl1.Location = new System.Drawing.Point(0, 0);
             this.gridControl1.MainView = this.gridView1;
@@ -97,107 +92,63 @@ namespace StoreManagement.PL
             this.gridView1.Appearance.Row.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.gridView1.Appearance.Row.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.colPur_Name,
-            this.colPur_Type,
-            this.colPur_Cat,
-            this.colPur_Supp,
-            this.colPur_Det,
-            this.colPur_Buy,
-            this.colPur_Sell,
-            this.colPur_Qu,
-            this.colPur_TBuy,
-            this.colPur_TSell,
-            this.colPur_TProf});
+            this.colSal_Name,
+            this.colSal_Cus,
+            this.colSal_Sell,
+            this.colSal_Qt,
+            this.colSal_TSell,
+            this.colSal_Date});
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
+            this.gridView1.OptionsBehavior.Editable = false;
             // 
-            // colPur_Name
+            // colSal_Name
             // 
-            this.colPur_Name.Caption = "اسم الماده";
-            this.colPur_Name.FieldName = "Pur_Name";
-            this.colPur_Name.Name = "colPur_Name";
-            this.colPur_Name.Visible = true;
-            this.colPur_Name.VisibleIndex = 0;
+            this.colSal_Name.Caption = "اسم الماده";
+            this.colSal_Name.FieldName = "Sal_Name";
+            this.colSal_Name.Name = "colSal_Name";
+            this.colSal_Name.Visible = true;
+            this.colSal_Name.VisibleIndex = 0;
             // 
-            // colPur_Type
+            // colSal_Cus
             // 
-            this.colPur_Type.Caption = "النوع";
-            this.colPur_Type.FieldName = "Pur_Type";
-            this.colPur_Type.Name = "colPur_Type";
-            this.colPur_Type.Visible = true;
-            this.colPur_Type.VisibleIndex = 1;
+            this.colSal_Cus.Caption = "العميل";
+            this.colSal_Cus.FieldName = "Sal_Cus";
+            this.colSal_Cus.Name = "colSal_Cus";
+            this.colSal_Cus.Visible = true;
+            this.colSal_Cus.VisibleIndex = 1;
             // 
-            // colPur_Cat
+            // colSal_Sell
             // 
-            this.colPur_Cat.Caption = "الصنف";
-            this.colPur_Cat.FieldName = "Pur_Cat";
-            this.colPur_Cat.Name = "colPur_Cat";
-            this.colPur_Cat.Visible = true;
-            this.colPur_Cat.VisibleIndex = 2;
+            this.colSal_Sell.Caption = "السعر";
+            this.colSal_Sell.FieldName = "Sal_Sell";
+            this.colSal_Sell.Name = "colSal_Sell";
+            this.colSal_Sell.Visible = true;
+            this.colSal_Sell.VisibleIndex = 2;
             // 
-            // colPur_Supp
+            // colSal_Qt
             // 
-            this.colPur_Supp.Caption = "المورد";
-            this.colPur_Supp.FieldName = "Pur_Supp";
-            this.colPur_Supp.Name = "colPur_Supp";
-            this.colPur_Supp.Visible = true;
-            this.colPur_Supp.VisibleIndex = 3;
+            this.colSal_Qt.Caption = "الكميه";
+            this.colSal_Qt.FieldName = "Sal_Qt";
+            this.colSal_Qt.Name = "colSal_Qt";
+            this.colSal_Qt.Visible = true;
+            this.colSal_Qt.VisibleIndex = 3;
             // 
-            // colPur_Det
+            // colSal_TSell
             // 
-            this.colPur_Det.Caption = "التفاصيل";
-            this.colPur_Det.FieldName = "Pur_Det";
-            this.colPur_Det.Name = "colPur_Det";
-            this.colPur_Det.Visible = true;
-            this.colPur_Det.VisibleIndex = 4;
+            this.colSal_TSell.Caption = "السعر الكلى";
+            this.colSal_TSell.FieldName = "Sal_TSell";
+            this.colSal_TSell.Name = "colSal_TSell";
+            this.colSal_TSell.Visible = true;
+            this.colSal_TSell.VisibleIndex = 4;
             // 
-            // colPur_Buy
+            // colSal_Date
             // 
-            this.colPur_Buy.Caption = "سعر الشراء";
-            this.colPur_Buy.FieldName = "Pur_Buy";
-            this.colPur_Buy.Name = "colPur_Buy";
-            this.colPur_Buy.Visible = true;
-            this.colPur_Buy.VisibleIndex = 5;
-            // 
-            // colPur_Sell
-            // 
-            this.colPur_Sell.Caption = "سعر البيع";
-            this.colPur_Sell.FieldName = "Pur_Sell";
-            this.colPur_Sell.Name = "colPur_Sell";
-            this.colPur_Sell.Visible = true;
-            this.colPur_Sell.VisibleIndex = 6;
-            // 
-            // colPur_Qu
-            // 
-            this.colPur_Qu.Caption = "الكميه";
-            this.colPur_Qu.FieldName = "Pur_Qu";
-            this.colPur_Qu.Name = "colPur_Qu";
-            this.colPur_Qu.Visible = true;
-            this.colPur_Qu.VisibleIndex = 7;
-            // 
-            // colPur_TBuy
-            // 
-            this.colPur_TBuy.Caption = "سعر البيع الكلى";
-            this.colPur_TBuy.FieldName = "Pur_TBuy";
-            this.colPur_TBuy.Name = "colPur_TBuy";
-            this.colPur_TBuy.Visible = true;
-            this.colPur_TBuy.VisibleIndex = 8;
-            // 
-            // colPur_TSell
-            // 
-            this.colPur_TSell.Caption = "سعر الشراء الكلى";
-            this.colPur_TSell.FieldName = "Pur_TSell";
-            this.colPur_TSell.Name = "colPur_TSell";
-            this.colPur_TSell.Visible = true;
-            this.colPur_TSell.VisibleIndex = 9;
-            // 
-            // colPur_TProf
-            // 
-            this.colPur_TProf.Caption = "الارباح";
-            this.colPur_TProf.FieldName = "Pur_TProf";
-            this.colPur_TProf.Name = "colPur_TProf";
-            this.colPur_TProf.Visible = true;
-            this.colPur_TProf.VisibleIndex = 10;
+            this.colSal_Date.Caption = "التاريخ";
+            this.colSal_Date.FieldName = "Sal_Date";
+            this.colSal_Date.Name = "colSal_Date";
+            this.colSal_Date.Visible = true;
+            this.colSal_Date.VisibleIndex = 5;
             // 
             // panel1
             // 
@@ -269,6 +220,7 @@ namespace StoreManagement.PL
             this.bt_Edite.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.bt_Edite.Appearance.Font = new System.Drawing.Font("Arabic Typesetting", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bt_Edite.Appearance.Options.UseFont = true;
+            this.bt_Edite.Enabled = false;
             this.bt_Edite.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("bt_Edite.ImageOptions.Image")));
             this.bt_Edite.Location = new System.Drawing.Point(105, 14);
             this.bt_Edite.Name = "bt_Edite";
@@ -290,20 +242,20 @@ namespace StoreManagement.PL
             this.simpleButton1.Text = "اضافه";
             this.simpleButton1.Click += new System.EventHandler(this.bt_Add);
             // 
-            // Purchases
+            // Sales
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(694, 502);
-            this.Controls.Add(this.pn_Pur);
+            this.Controls.Add(this.pn_Sell);
             this.Font = new System.Drawing.Font("Arabic Typesetting", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
-            this.Name = "Purchases";
+            this.Name = "Sales";
             this.Text = "Catagories";
             this.Activated += new System.EventHandler(this.Purchases_Activated);
-            this.pn_Pur.ResumeLayout(false);
+            this.pn_Sell.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             this.panel1.ResumeLayout(false);
@@ -314,7 +266,7 @@ namespace StoreManagement.PL
 
         #endregion
 
-        public System.Windows.Forms.Panel pn_Pur;
+        public System.Windows.Forms.Panel pn_Sell;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.TextBox txt_search;
         private DevExpress.XtraEditors.SimpleButton bt_search;
@@ -324,16 +276,11 @@ namespace StoreManagement.PL
         private DevExpress.XtraEditors.SimpleButton simpleButton1;
         public DevExpress.XtraGrid.GridControl gridControl1;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
-        private DevExpress.XtraGrid.Columns.GridColumn colPur_Name;
-        private DevExpress.XtraGrid.Columns.GridColumn colPur_Type;
-        private DevExpress.XtraGrid.Columns.GridColumn colPur_Cat;
-        private DevExpress.XtraGrid.Columns.GridColumn colPur_Supp;
-        private DevExpress.XtraGrid.Columns.GridColumn colPur_Det;
-        private DevExpress.XtraGrid.Columns.GridColumn colPur_Buy;
-        private DevExpress.XtraGrid.Columns.GridColumn colPur_Sell;
-        private DevExpress.XtraGrid.Columns.GridColumn colPur_Qu;
-        private DevExpress.XtraGrid.Columns.GridColumn colPur_TBuy;
-        private DevExpress.XtraGrid.Columns.GridColumn colPur_TSell;
-        private DevExpress.XtraGrid.Columns.GridColumn colPur_TProf;
+        private DevExpress.XtraGrid.Columns.GridColumn colSal_Name;
+        private DevExpress.XtraGrid.Columns.GridColumn colSal_Cus;
+        private DevExpress.XtraGrid.Columns.GridColumn colSal_Sell;
+        private DevExpress.XtraGrid.Columns.GridColumn colSal_Qt;
+        private DevExpress.XtraGrid.Columns.GridColumn colSal_TSell;
+        private DevExpress.XtraGrid.Columns.GridColumn colSal_Date;
     }
 }

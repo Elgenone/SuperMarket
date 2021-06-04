@@ -7,7 +7,12 @@
       <Diagram DiagramId="4c64a3cfbc4e4ccca6175f8b4c2eb25e" Name="Diagram1">
         <EntityTypeShape EntityType="DB_SMPModel.TB_Cat" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="DB_SMPModel.TB_Supp" Width="1.5" PointX="3.375" PointY="0.75" />
-      </Diagram>
+        <EntityTypeShape EntityType="DB_SMPModel.TB_Pur" Width="1.5" PointX="5.625" PointY="0.75" />
+        <AssociationConnector Association="DB_SMPModel.FK_TB_Pur_TB_Cat" />
+        <AssociationConnector Association="DB_SMPModel.FK_TB_Pur_TB_Supp" />
+        <EntityTypeShape EntityType="DB_SMPModel.TB_Cus" Width="1.5" PointX="0.75" PointY="3.75" />
+        <EntityTypeShape EntityType="DB_SMPModel.TB_Sal" Width="1.5" PointX="3.375" PointY="5.75" />
+        </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
 </edmx:Edmx>

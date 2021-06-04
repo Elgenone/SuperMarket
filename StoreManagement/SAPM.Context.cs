@@ -27,5 +27,8 @@ namespace StoreManagement
     
         public virtual DbSet<TB_Cat> TB_Cat { get; set; }
         public virtual DbSet<TB_Supp> TB_Supp { get; set; }
+        public virtual DbSet<TB_Pur> TB_Pur { get; set; }
+        public virtual DbSet<TB_Cus> TB_Cus { get; set; }
+        public virtual DbSet<TB_Sal> TB_Sal { get; set; }
     }
 }

@@ -13,6 +13,47 @@
           <Property Name="Cat_Name" Type="nvarchar" MaxLength="50" />
           <Property Name="Cat_Image" Type="image" />
         </EntityType>
+        <EntityType Name="TB_Cus">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Cus_Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="Cus_Email" Type="nvarchar" MaxLength="50" />
+          <Property Name="Cus_Phone" Type="nvarchar" MaxLength="50" />
+          <Property Name="Cus_Image" Type="image" />
+        </EntityType>
+        <EntityType Name="TB_Pur">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Cat_ID" Type="int" />
+          <Property Name="Supp_ID" Type="int" />
+          <Property Name="Pur_Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="Pur_Type" Type="nvarchar" MaxLength="50" />
+          <Property Name="Pur_Cat" Type="nvarchar" MaxLength="50" />
+          <Property Name="Pur_Supp" Type="nvarchar" MaxLength="50" />
+          <Property Name="Pur_Det" Type="nvarchar" MaxLength="50" />
+          <Property Name="Pur_Buy" Type="float" />
+          <Property Name="Pur_Sell" Type="float" />
+          <Property Name="Pur_Qu" Type="float" />
+          <Property Name="Pur_TBuy" Type="float" />
+          <Property Name="Pur_TSell" Type="float" />
+          <Property Name="Pur_TProf" Type="float" />
+        </EntityType>
+        <EntityType Name="TB_Sal">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Sal_Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="Sal_Cus" Type="nvarchar" MaxLength="50" />
+          <Property Name="Sal_Sell" Type="float" />
+          <Property Name="Sal_Qt" Type="float" />
+          <Property Name="Sal_TSell" Type="float" />
+          <Property Name="Sal_Date" Type="datetime" />
+        </EntityType>
         <EntityType Name="TB_Supp">
           <Key>
             <PropertyRef Name="ID" />
@@ -23,9 +64,48 @@
           <Property Name="Supp_Phone" Type="nvarchar" MaxLength="50" />
           <Property Name="Supp_Image" Type="image" />
         </EntityType>
+        <Association Name="FK_TB_Pur_TB_Cat">
+          <End Role="TB_Cat" Type="Self.TB_Cat" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="TB_Pur" Type="Self.TB_Pur" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TB_Cat">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="TB_Pur">
+              <PropertyRef Name="Cat_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TB_Pur_TB_Supp">
+          <End Role="TB_Supp" Type="Self.TB_Supp" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="TB_Pur" Type="Self.TB_Pur" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TB_Supp">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="TB_Pur">
+              <PropertyRef Name="Supp_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <EntityContainer Name="DB_SMPModelStoreContainer">
           <EntitySet Name="TB_Cat" EntityType="Self.TB_Cat" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TB_Cus" EntityType="Self.TB_Cus" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TB_Pur" EntityType="Self.TB_Pur" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TB_Sal" EntityType="Self.TB_Sal" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TB_Supp" EntityType="Self.TB_Supp" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_TB_Pur_TB_Cat" Association="Self.FK_TB_Pur_TB_Cat">
+            <End Role="TB_Cat" EntitySet="TB_Cat" />
+            <End Role="TB_Pur" EntitySet="TB_Pur" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TB_Pur_TB_Supp" Association="Self.FK_TB_Pur_TB_Supp">
+            <End Role="TB_Supp" EntitySet="TB_Supp" />
+            <End Role="TB_Pur" EntitySet="TB_Pur" />
+          </AssociationSet>
         </EntityContainer>
       </Schema></edmx:StorageModels>
     <!-- CSDL content -->
@@ -38,11 +118,23 @@
           <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Cat_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Cat_Image" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <NavigationProperty Name="TB_Pur" Relationship="DB_SMPModel.FK_TB_Pur_TB_Cat" FromRole="TB_Cat" ToRole="TB_Pur" />
         </EntityType>
         <EntityContainer Name="DB_SMPEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="TB_Cat" EntityType="Self.TB_Cat" />
           <EntitySet Name="TB_Supp" EntityType="DB_SMPModel.TB_Supp" />
-        </EntityContainer>
+          <EntitySet Name="TB_Pur" EntityType="DB_SMPModel.TB_Pur" />
+          <AssociationSet Name="FK_TB_Pur_TB_Cat" Association="DB_SMPModel.FK_TB_Pur_TB_Cat">
+            <End Role="TB_Cat" EntitySet="TB_Cat" />
+            <End Role="TB_Pur" EntitySet="TB_Pur" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TB_Pur_TB_Supp" Association="DB_SMPModel.FK_TB_Pur_TB_Supp">
+            <End Role="TB_Supp" EntitySet="TB_Supp" />
+            <End Role="TB_Pur" EntitySet="TB_Pur" />
+          </AssociationSet>
+          <EntitySet Name="TB_Cus" EntityType="DB_SMPModel.TB_Cus" />
+          <EntitySet Name="TB_Sal" EntityType="DB_SMPModel.TB_Sal" />
+          </EntityContainer>
         <EntityType Name="TB_Supp">
           <Key>
             <PropertyRef Name="ID" />
@@ -52,8 +144,80 @@
           <Property Name="Supp_Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Supp_Phone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Supp_Image" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <NavigationProperty Name="TB_Pur" Relationship="DB_SMPModel.FK_TB_Pur_TB_Supp" FromRole="TB_Supp" ToRole="TB_Pur" />
         </EntityType>
-      </Schema>
+        <EntityType Name="TB_Pur">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Cat_ID" Type="Int32" />
+          <Property Name="Supp_ID" Type="Int32" />
+          <Property Name="Pur_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Pur_Type" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Pur_Cat" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Pur_Supp" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Pur_Det" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Pur_Buy" Type="Double" />
+          <Property Name="Pur_Sell" Type="Double" />
+          <Property Name="Pur_Qu" Type="Double" />
+          <Property Name="Pur_TBuy" Type="Double" />
+          <Property Name="Pur_TSell" Type="Double" />
+          <Property Name="Pur_TProf" Type="Double" />
+          <NavigationProperty Name="TB_Cat" Relationship="DB_SMPModel.FK_TB_Pur_TB_Cat" FromRole="TB_Pur" ToRole="TB_Cat" />
+          <NavigationProperty Name="TB_Supp" Relationship="DB_SMPModel.FK_TB_Pur_TB_Supp" FromRole="TB_Pur" ToRole="TB_Supp" />
+        </EntityType>
+        <Association Name="FK_TB_Pur_TB_Cat">
+          <End Type="DB_SMPModel.TB_Cat" Role="TB_Cat" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="DB_SMPModel.TB_Pur" Role="TB_Pur" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TB_Cat">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="TB_Pur">
+              <PropertyRef Name="Cat_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TB_Pur_TB_Supp">
+          <End Type="DB_SMPModel.TB_Supp" Role="TB_Supp" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="DB_SMPModel.TB_Pur" Role="TB_Pur" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TB_Supp">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="TB_Pur">
+              <PropertyRef Name="Supp_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="TB_Cus">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Cus_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Cus_Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Cus_Phone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Cus_Image" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="TB_Sal">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Sal_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Sal_Cus" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Sal_Sell" Type="Double" />
+          <Property Name="Sal_Qt" Type="Double" />
+          <Property Name="Sal_TSell" Type="Double" />
+          <Property Name="Sal_Date" Type="DateTime" Precision="3" />
+        </EntityType>
+        </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
@@ -75,6 +239,50 @@
                 <ScalarProperty Name="Supp_Phone" ColumnName="Supp_Phone" />
                 <ScalarProperty Name="Supp_Email" ColumnName="Supp_Email" />
                 <ScalarProperty Name="Supp_Name" ColumnName="Supp_Name" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TB_Pur">
+            <EntityTypeMapping TypeName="DB_SMPModel.TB_Pur">
+              <MappingFragment StoreEntitySet="TB_Pur">
+                <ScalarProperty Name="Pur_TProf" ColumnName="Pur_TProf" />
+                <ScalarProperty Name="Pur_TSell" ColumnName="Pur_TSell" />
+                <ScalarProperty Name="Pur_TBuy" ColumnName="Pur_TBuy" />
+                <ScalarProperty Name="Pur_Qu" ColumnName="Pur_Qu" />
+                <ScalarProperty Name="Pur_Sell" ColumnName="Pur_Sell" />
+                <ScalarProperty Name="Pur_Buy" ColumnName="Pur_Buy" />
+                <ScalarProperty Name="Pur_Det" ColumnName="Pur_Det" />
+                <ScalarProperty Name="Pur_Supp" ColumnName="Pur_Supp" />
+                <ScalarProperty Name="Pur_Cat" ColumnName="Pur_Cat" />
+                <ScalarProperty Name="Pur_Type" ColumnName="Pur_Type" />
+                <ScalarProperty Name="Pur_Name" ColumnName="Pur_Name" />
+                <ScalarProperty Name="Supp_ID" ColumnName="Supp_ID" />
+                <ScalarProperty Name="Cat_ID" ColumnName="Cat_ID" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TB_Cus">
+            <EntityTypeMapping TypeName="DB_SMPModel.TB_Cus">
+              <MappingFragment StoreEntitySet="TB_Cus">
+                <ScalarProperty Name="Cus_Image" ColumnName="Cus_Image" />
+                <ScalarProperty Name="Cus_Phone" ColumnName="Cus_Phone" />
+                <ScalarProperty Name="Cus_Email" ColumnName="Cus_Email" />
+                <ScalarProperty Name="Cus_Name" ColumnName="Cus_Name" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TB_Sal">
+            <EntityTypeMapping TypeName="DB_SMPModel.TB_Sal">
+              <MappingFragment StoreEntitySet="TB_Sal">
+                <ScalarProperty Name="Sal_Date" ColumnName="Sal_Date" />
+                <ScalarProperty Name="Sal_TSell" ColumnName="Sal_TSell" />
+                <ScalarProperty Name="Sal_Qt" ColumnName="Sal_Qt" />
+                <ScalarProperty Name="Sal_Sell" ColumnName="Sal_Sell" />
+                <ScalarProperty Name="Sal_Cus" ColumnName="Sal_Cus" />
+                <ScalarProperty Name="Sal_Name" ColumnName="Sal_Name" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
               </MappingFragment>
             </EntityTypeMapping>

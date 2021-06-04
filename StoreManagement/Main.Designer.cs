@@ -84,10 +84,11 @@ namespace StoreManagement
             // 
             this.txt_title.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txt_title.AutoSize = true;
-            this.txt_title.ForeColor = System.Drawing.Color.Silver;
-            this.txt_title.Location = new System.Drawing.Point(326, 17);
+            this.txt_title.Font = new System.Drawing.Font("Arabic Typesetting", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_title.ForeColor = System.Drawing.Color.White;
+            this.txt_title.Location = new System.Drawing.Point(326, 10);
             this.txt_title.Name = "txt_title";
-            this.txt_title.Size = new System.Drawing.Size(76, 21);
+            this.txt_title.Size = new System.Drawing.Size(118, 34);
             this.txt_title.TabIndex = 6;
             this.txt_title.Text = "الصفحه الرئيسيه";
             // 
@@ -201,7 +202,7 @@ namespace StoreManagement
             this.bt_suppler.Appearance.ForeColor = System.Drawing.Color.Gray;
             this.bt_suppler.Appearance.Options.UseFont = true;
             this.bt_suppler.Appearance.Options.UseForeColor = true;
-            this.bt_suppler.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("bt_subler.ImageOptions.Image")));
+            this.bt_suppler.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("bt_suppler.ImageOptions.Image")));
             this.bt_suppler.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleLeft;
             this.bt_suppler.Location = new System.Drawing.Point(0, 85);
             this.bt_suppler.Name = "bt_suppler";
@@ -225,6 +226,7 @@ namespace StoreManagement
             this.bt_products.Size = new System.Drawing.Size(212, 35);
             this.bt_products.TabIndex = 5;
             this.bt_products.Text = "المشتريات";
+            this.bt_products.Click += new System.EventHandler(this.bt_products_Click);
             // 
             // bt_clinets
             // 
@@ -240,6 +242,7 @@ namespace StoreManagement
             this.bt_clinets.Size = new System.Drawing.Size(212, 35);
             this.bt_clinets.TabIndex = 6;
             this.bt_clinets.Text = "العملاء";
+            this.bt_clinets.Click += new System.EventHandler(this.bt_clinets_Click);
             // 
             // bt_seles
             // 
@@ -255,6 +258,7 @@ namespace StoreManagement
             this.bt_seles.Size = new System.Drawing.Size(212, 35);
             this.bt_seles.TabIndex = 7;
             this.bt_seles.Text = "المبيعات";
+            this.bt_seles.Click += new System.EventHandler(this.bt_seles_Click);
             // 
             // bt_reports
             // 
@@ -270,6 +274,7 @@ namespace StoreManagement
             this.bt_reports.Size = new System.Drawing.Size(212, 35);
             this.bt_reports.TabIndex = 8;
             this.bt_reports.Text = "التقارير";
+            this.bt_reports.Click += new System.EventHandler(this.bt_reports_Click);
             // 
             // bt_users
             // 

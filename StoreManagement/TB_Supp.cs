@@ -14,10 +14,19 @@ namespace StoreManagement
     
     public partial class TB_Supp
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public TB_Supp()
+        {
+            this.TB_Pur = new HashSet<TB_Pur>();
+        }
+    
         public int ID { get; set; }
         public string Supp_Name { get; set; }
         public string Supp_Email { get; set; }
         public string Supp_Phone { get; set; }
         public byte[] Supp_Image { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<TB_Pur> TB_Pur { get; set; }
     }
 }
