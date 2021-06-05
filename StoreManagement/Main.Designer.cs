@@ -290,6 +290,7 @@ namespace StoreManagement
             this.bt_users.Size = new System.Drawing.Size(212, 35);
             this.bt_users.TabIndex = 9;
             this.bt_users.Text = "المستخدمين";
+            this.bt_users.Click += new System.EventHandler(this.bt_users_Click);
             // 
             // bt_setings
             // 
@@ -305,6 +306,7 @@ namespace StoreManagement
             this.bt_setings.Size = new System.Drawing.Size(212, 35);
             this.bt_setings.TabIndex = 10;
             this.bt_setings.Text = "الاعدادات";
+            this.bt_setings.Click += new System.EventHandler(this.bt_setings_Click);
             // 
             // pn_navHeader
             // 

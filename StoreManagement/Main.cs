@@ -20,6 +20,9 @@ namespace StoreManagement
         PL.Customers cus = new PL.Customers();
         PL.Sales sel = new PL.Sales();
         PL.Reports rep = new PL.Reports();
+        PL.Users user = new PL.Users();
+
+
 
 
         DB_SMPEntities db = new DB_SMPEntities();
@@ -139,6 +142,20 @@ namespace StoreManagement
             pn_content.Controls.Clear();
             pn_content.Controls.Add(rep.pn_Rep);
             txt_title.Text = "التقارير";
+        }
+
+        private void bt_users_Click(object sender, EventArgs e)
+        {
+            pn_content.Controls.Clear();
+            pn_content.Controls.Add(user.pn_Pur);
+            db = new DB_SMPEntities();
+            txt_title.Text = "المستخدمين";
+        }
+
+        private void bt_setings_Click(object sender, EventArgs e)
+        {
+            PL.Settings settings = new PL.Settings();
+            settings.Show();
         }
     }
 }

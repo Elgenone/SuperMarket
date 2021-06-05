@@ -64,6 +64,16 @@
           <Property Name="Supp_Phone" Type="nvarchar" MaxLength="50" />
           <Property Name="Supp_Image" Type="image" />
         </EntityType>
+        <EntityType Name="TB_User">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="User_Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="User_Pass" Type="nvarchar" MaxLength="50" />
+          <Property Name="User_Roll" Type="nvarchar" MaxLength="50" />
+          <Property Name="User_Status" Type="nvarchar" MaxLength="50" />
+        </EntityType>
         <Association Name="FK_TB_Pur_TB_Cat">
           <End Role="TB_Cat" Type="Self.TB_Cat" Multiplicity="0..1">
             <OnDelete Action="Cascade" />
@@ -98,6 +108,7 @@
           <EntitySet Name="TB_Pur" EntityType="Self.TB_Pur" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TB_Sal" EntityType="Self.TB_Sal" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TB_Supp" EntityType="Self.TB_Supp" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TB_User" EntityType="Self.TB_User" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="FK_TB_Pur_TB_Cat" Association="Self.FK_TB_Pur_TB_Cat">
             <End Role="TB_Cat" EntitySet="TB_Cat" />
             <End Role="TB_Pur" EntitySet="TB_Pur" />
@@ -134,6 +145,7 @@
           </AssociationSet>
           <EntitySet Name="TB_Cus" EntityType="DB_SMPModel.TB_Cus" />
           <EntitySet Name="TB_Sal" EntityType="DB_SMPModel.TB_Sal" />
+          <EntitySet Name="TB_User" EntityType="DB_SMPModel.TB_User" />
           </EntityContainer>
         <EntityType Name="TB_Supp">
           <Key>
@@ -217,6 +229,16 @@
           <Property Name="Sal_TSell" Type="Double" />
           <Property Name="Sal_Date" Type="DateTime" Precision="3" />
         </EntityType>
+        <EntityType Name="TB_User">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="User_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="User_Pass" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="User_Roll" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="User_Status" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
         </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -283,6 +305,17 @@
                 <ScalarProperty Name="Sal_Sell" ColumnName="Sal_Sell" />
                 <ScalarProperty Name="Sal_Cus" ColumnName="Sal_Cus" />
                 <ScalarProperty Name="Sal_Name" ColumnName="Sal_Name" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TB_User">
+            <EntityTypeMapping TypeName="DB_SMPModel.TB_User">
+              <MappingFragment StoreEntitySet="TB_User">
+                <ScalarProperty Name="User_Status" ColumnName="User_Status" />
+                <ScalarProperty Name="User_Roll" ColumnName="User_Roll" />
+                <ScalarProperty Name="User_Pass" ColumnName="User_Pass" />
+                <ScalarProperty Name="User_Name" ColumnName="User_Name" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
               </MappingFragment>
             </EntityTypeMapping>

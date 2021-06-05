@@ -74,6 +74,7 @@
     </Reference>
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Configuration" />
+    <Reference Include="System.Configuration.Install" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.Linq" />
     <Reference Include="System.Management" />
@@ -104,16 +105,34 @@
     <Compile Include="EPL\Toast.Designer.cs">
       <DependentUpon>Toast.cs</DependentUpon>
     </Compile>
+    <Compile Include="PL\Settings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\Settings.Designer.cs">
+      <DependentUpon>Settings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PL\User_Add.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\User_Add.Designer.cs">
+      <DependentUpon>User_Add.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PL\Users.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\Users.Designer.cs">
+      <DependentUpon>Users.cs</DependentUpon>
+    </Compile>
     <Compile Include="PL\Reports.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="PL\Reports.Designer.cs">
       <DependentUpon>Reports.cs</DependentUpon>
     </Compile>
-    <Compile Include="PL\SalesReport1.cs">
+    <Compile Include="PL\Reports\SalesReport1.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="PL\SalesReport1.Designer.cs">
+    <Compile Include="PL\Reports\SalesReport1.Designer.cs">
       <DependentUpon>SalesReport1.cs</DependentUpon>
     </Compile>
     <Compile Include="PL\Sales_ِAdd.cs">
@@ -220,6 +239,9 @@
     <Compile Include="TB_Supp.cs">
       <DependentUpon>SAPM.tt</DependentUpon>
     </Compile>
+    <Compile Include="TB_User.cs">
+      <DependentUpon>SAPM.tt</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="EPL\Dailog.resx">
       <DependentUpon>Dailog.cs</DependentUpon>
     </EmbeddedResource>
@@ -229,10 +251,19 @@
     <EmbeddedResource Include="Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="PL\Settings.resx">
+      <DependentUpon>Settings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\User_Add.resx">
+      <DependentUpon>User_Add.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\Users.resx">
+      <DependentUpon>Users.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PL\Reports.resx">
       <DependentUpon>Reports.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PL\SalesReport1.resx">
+    <EmbeddedResource Include="PL\Reports\SalesReport1.resx">
       <DependentUpon>SalesReport1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PL\Sales_ِAdd.resx">

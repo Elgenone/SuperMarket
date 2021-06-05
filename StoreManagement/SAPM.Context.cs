@@ -30,5 +30,6 @@ namespace StoreManagement
         public virtual DbSet<TB_Pur> TB_Pur { get; set; }
         public virtual DbSet<TB_Cus> TB_Cus { get; set; }
         public virtual DbSet<TB_Sal> TB_Sal { get; set; }
+        public virtual DbSet<TB_User> TB_User { get; set; }
     }
 }
