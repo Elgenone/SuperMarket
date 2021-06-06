@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.Entity;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -88,6 +89,14 @@ namespace StoreManagement
             pn_content.Controls.Clear();
             pn_content.Controls.Add(home.pn_home);
             txt_title.Text = "الصفحه الرئيسيه";
+            if (user_Roll.Text=="مستخدم")
+            {
+                bt_users.Visible = false;
+                bt_suppler.Visible = false;
+                bt_setings.Visible = false;
+
+            }
+
         }
 
         //Load catagory Page
@@ -156,6 +165,21 @@ namespace StoreManagement
         {
             PL.Settings settings = new PL.Settings();
             settings.Show();
+        }
+
+        private void bt_logout_Click(object sender, EventArgs e)
+        {
+            TB_User tb_user = new TB_User();
+            PL.Login login = new PL.Login();
+
+            tb_user = db.TB_User.SingleOrDefault(x => x.User_Status == "True");
+            tb_user.User_Status = "False";
+            db.Entry(tb_user).State = EntityState.Modified;
+            db.SaveChanges();
+
+            this.Enabled = false;
+            login.Show();
+            this.Hide();
         }
     }
 }

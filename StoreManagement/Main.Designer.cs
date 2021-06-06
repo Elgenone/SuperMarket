@@ -33,7 +33,7 @@ namespace StoreManagement
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
             this.pn_topBar = new System.Windows.Forms.Panel();
             this.txt_title = new System.Windows.Forms.Label();
-            this.bt_notify = new DevExpress.XtraEditors.SimpleButton();
+            this.bt_logout = new DevExpress.XtraEditors.SimpleButton();
             this.bt_smallSize = new DevExpress.XtraEditors.SimpleButton();
             this.bt_bigSize = new DevExpress.XtraEditors.SimpleButton();
             this.bt_cancle = new DevExpress.XtraEditors.SimpleButton();
@@ -51,8 +51,8 @@ namespace StoreManagement
             this.pn_navHeader = new System.Windows.Forms.Panel();
             this.pn_titleNav = new System.Windows.Forms.Panel();
             this.pictureEdit1 = new DevExpress.XtraEditors.PictureEdit();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.user_Roll = new System.Windows.Forms.Label();
+            this.user_Name = new System.Windows.Forms.Label();
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
             this.bt_collapse = new DevExpress.XtraEditors.SimpleButton();
             this.pn_content = new System.Windows.Forms.Panel();
@@ -70,7 +70,7 @@ namespace StoreManagement
             // 
             this.pn_topBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
             this.pn_topBar.Controls.Add(this.txt_title);
-            this.pn_topBar.Controls.Add(this.bt_notify);
+            this.pn_topBar.Controls.Add(this.bt_logout);
             this.pn_topBar.Controls.Add(this.bt_smallSize);
             this.pn_topBar.Controls.Add(this.bt_bigSize);
             this.pn_topBar.Controls.Add(this.bt_cancle);
@@ -92,15 +92,16 @@ namespace StoreManagement
             this.txt_title.TabIndex = 6;
             this.txt_title.Text = "الصفحه الرئيسيه";
             // 
-            // bt_notify
+            // bt_logout
             // 
-            this.bt_notify.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("bt_notify.ImageOptions.Image")));
-            this.bt_notify.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
-            this.bt_notify.Location = new System.Drawing.Point(140, 12);
-            this.bt_notify.Name = "bt_notify";
-            this.bt_notify.PaintStyle = DevExpress.XtraEditors.Controls.PaintStyles.Light;
-            this.bt_notify.Size = new System.Drawing.Size(40, 40);
-            this.bt_notify.TabIndex = 2;
+            this.bt_logout.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("bt_logout.ImageOptions.Image")));
+            this.bt_logout.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
+            this.bt_logout.Location = new System.Drawing.Point(140, 12);
+            this.bt_logout.Name = "bt_logout";
+            this.bt_logout.PaintStyle = DevExpress.XtraEditors.Controls.PaintStyles.Light;
+            this.bt_logout.Size = new System.Drawing.Size(40, 40);
+            this.bt_logout.TabIndex = 2;
+            this.bt_logout.Click += new System.EventHandler(this.bt_logout_Click);
             // 
             // bt_smallSize
             // 
@@ -321,8 +322,8 @@ namespace StoreManagement
             // pn_titleNav
             // 
             this.pn_titleNav.Controls.Add(this.pictureEdit1);
-            this.pn_titleNav.Controls.Add(this.label3);
-            this.pn_titleNav.Controls.Add(this.label2);
+            this.pn_titleNav.Controls.Add(this.user_Roll);
+            this.pn_titleNav.Controls.Add(this.user_Name);
             this.pn_titleNav.Location = new System.Drawing.Point(6, 3);
             this.pn_titleNav.Name = "pn_titleNav";
             this.pn_titleNav.Size = new System.Drawing.Size(147, 161);
@@ -338,27 +339,27 @@ namespace StoreManagement
             this.pictureEdit1.Size = new System.Drawing.Size(100, 96);
             this.pictureEdit1.TabIndex = 0;
             // 
-            // label3
+            // user_Roll
             // 
-            this.label3.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label3.AutoSize = true;
-            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label3.Location = new System.Drawing.Point(58, 130);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(30, 21);
-            this.label3.TabIndex = 6;
-            this.label3.Text = "ادمن";
+            this.user_Roll.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.user_Roll.AutoSize = true;
+            this.user_Roll.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.user_Roll.Location = new System.Drawing.Point(58, 130);
+            this.user_Roll.Name = "user_Roll";
+            this.user_Roll.Size = new System.Drawing.Size(30, 21);
+            this.user_Roll.TabIndex = 6;
+            this.user_Roll.Text = "ادمن";
             // 
-            // label2
+            // user_Name
             // 
-            this.label2.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label2.AutoSize = true;
-            this.label2.ForeColor = System.Drawing.Color.Silver;
-            this.label2.Location = new System.Drawing.Point(44, 109);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(59, 21);
-            this.label2.TabIndex = 6;
-            this.label2.Text = "محمود عاطف";
+            this.user_Name.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.user_Name.AutoSize = true;
+            this.user_Name.ForeColor = System.Drawing.Color.Silver;
+            this.user_Name.Location = new System.Drawing.Point(44, 109);
+            this.user_Name.Name = "user_Name";
+            this.user_Name.Size = new System.Drawing.Size(59, 21);
+            this.user_Name.TabIndex = 6;
+            this.user_Name.Text = "محمود عاطف";
             // 
             // flowLayoutPanel2
             // 
@@ -406,11 +407,13 @@ namespace StoreManagement
             this.Controls.Add(this.pn_navBar);
             this.Font = new System.Drawing.Font("Arabic Typesetting", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.Name = "Main";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Store";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Main_Load);
             this.pn_topBar.ResumeLayout(false);
             this.pn_topBar.PerformLayout();
@@ -431,14 +434,12 @@ namespace StoreManagement
         private System.Windows.Forms.Panel pn_navBar;
         private System.Windows.Forms.Panel pn_content;
         private System.Windows.Forms.Label txt_title;
-        private DevExpress.XtraEditors.SimpleButton bt_notify;
+        private DevExpress.XtraEditors.SimpleButton bt_logout;
         private DevExpress.XtraEditors.SimpleButton bt_smallSize;
         private DevExpress.XtraEditors.SimpleButton bt_bigSize;
         private DevExpress.XtraEditors.SimpleButton bt_cancle;
         private System.Windows.Forms.Panel pn_navHeader;
         private DevExpress.XtraEditors.PictureEdit pictureEdit1;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private DevExpress.XtraEditors.SimpleButton bt_Home;
         private DevExpress.XtraEditors.SimpleButton bt_collapse;
@@ -453,6 +454,8 @@ namespace StoreManagement
         private System.Windows.Forms.Panel pn_titleNav;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
         private Bunifu.Framework.UI.BunifuDragControl bunifuDragControl1;
+        public System.Windows.Forms.Label user_Roll;
+        public System.Windows.Forms.Label user_Name;
     }
 }
 

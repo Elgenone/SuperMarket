@@ -50,7 +50,7 @@ namespace StoreManagement.PL
             this.bt_Add_User.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.bt_Add_User.Appearance.Font = new System.Drawing.Font("Arabic Typesetting", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bt_Add_User.Appearance.Options.UseFont = true;
-            this.bt_Add_User.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("bt_Add_Supp.ImageOptions.Image")));
+            this.bt_Add_User.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("bt_Add_User.ImageOptions.Image")));
             this.bt_Add_User.Location = new System.Drawing.Point(349, 436);
             this.bt_Add_User.Name = "bt_Add_User";
             this.bt_Add_User.Size = new System.Drawing.Size(123, 44);
